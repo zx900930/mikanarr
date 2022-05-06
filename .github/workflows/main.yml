@@ -16,6 +16,13 @@ jobs:
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+      - name: Sync DockerHub README
+        uses: ms-jpq/sync-dockerhub-readme@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: triatk/mikanarr
+          readme: "./README.md"
       -
         name: Login to DockerHub
         uses: docker/login-action@v1 
@@ -27,10 +34,3 @@ jobs:
         with:
           push: true
           tags: triatk/mikanarr:latest
-      - name: Sync DockerHub README
-        uses: ms-jpq/sync-dockerhub-readme@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: triatk/mikanarr
-          readme: "./README.md"
