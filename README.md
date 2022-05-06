@@ -1,6 +1,6 @@
 # Mikanarr
 
-[![CircleCI](https://circleci.com/gh/std4453/mikanarr/tree/master.svg?style=svg)](https://circleci.com/gh/std4453/mikanarr/tree/master)
+[![Docker Image CI](https://github.com/zx900930/mikanarr/actions/workflows/main.yml/badge.svg)](https://github.com/zx900930/mikanarr/actions/workflows/main.yml)
 
 *Mikanarr* 由 *Mikan Anime* 与 *Sonarr* 混合而成，负责打通两者之间的桥梁，作为自动下载动画的关键一步存在。
 
@@ -108,7 +108,7 @@ https://<Mikanarr域名>/RSS/MyBangumi?token=<你的个人Token>
 
 ### 部署
 
-你可以使用 [Docker](https://www.docker.com/) 进行部署，我们的 Docker Image 在 [`izumiko/mikanarr`](https://hub.docker.com/r/izumiko/mikanarr) 。
+你可以使用 [Docker](https://www.docker.com/) 进行部署，我们的 Docker Image 在 [`triatk/mikanarr`](https://hub.docker.com/r/triatk/mikanarr) 。
 
 构建得到的镜像不包含 `.env` 文件，你需要把它放入下面的 `data/` 文件夹。
 
@@ -121,7 +121,7 @@ version: "3"
 
 services:
   mikanarr:
-    image: izumiko/mikanarr
+    image: triatk/mikanarr
     volumes:
       - /path/on/host/data:/data
     environment:
