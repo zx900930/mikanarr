@@ -21,7 +21,7 @@ jobs:
          uses: actions/checkout@master
       - 
          name: Change Screenshots Links
-         run: sed 's#截图](images/#截图](https://github.com/std4453/mikanarr/raw/master/images/#g' ./README.md
+         run: sed -i 's#截图](images/#截图](https://github.com/std4453/mikanarr/raw/master/images/#g' ./README.md
       - 
          name: Sync Readme
          uses: meeDamian/sync-readme@v1.0.6
