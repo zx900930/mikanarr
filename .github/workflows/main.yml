@@ -27,8 +27,6 @@ jobs:
         uses: DerYeger/yarn-setup-action@master
         with:
           node-version: 16
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
