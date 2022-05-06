@@ -22,11 +22,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Yarn Build   
-        uses: DerYeger/yarn-setup-action@master
-        with:
-          node-version: 16
+      # -
+      #   name: Yarn Build   
+      #   uses: DerYeger/yarn-setup-action@master
+      #   with:
+      #     node-version: 16
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
